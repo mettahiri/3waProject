@@ -1,0 +1,31 @@
+<?php include "header.phtml"?>
+    <main id="login">
+
+        <form action="index?page=inscription" method="POST">
+
+            <fieldset>  
+                <legend><h2>Inscription</h2></legend>
+                <h3 class="error"><?=$error?></h3>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Nom">
+
+                <label for="email">Email :</label>
+                <input type="text" id="email" name="email" placeholder="Email">
+
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" placeholder="numero, rue, code postale, ville ">
+
+                 <label for="mdp">Mot de passe :</label>
+                <input type="password" id="mdp" name="mdp" placeholder="Mot de passe">
+
+                 <label for="mdpConfirm">Confirmer le mot de passe :</label>
+                <input type="password" id="mdpConfirm" name="mdpConfirm" placeholder="Mot de passe">
+
+                <input type="submit" name="submit" value="Envoyer">
+                <p class="error"><a href="index?page=login">J'ai deja un compte je me connecte !!</a></p>
+            </fieldset>
+
+        </form>
+    </main>
+
+<?php include "footer.phtml"?>

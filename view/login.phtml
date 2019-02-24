@@ -1,0 +1,21 @@
+<?php include "header.phtml"?>
+    <main id="login">
+
+        <form action="index?page=login" method="post">
+            <fieldset>  
+                <legend><h2>Connexion</h2></legend>
+                <h3 class="error"><?=$error?></h3>
+
+                <label for="email">Email :</label>
+                <input type="text" id="email" name="email" placeholder="Email">
+
+                <label for="mdp">Mot de passe :</label>
+                <input type="password" id="mdp" name="mdp" placeholder="Mot de passe">
+                
+                <input type="submit" name="submit" value="Envoyer">
+                <p class="error"><a href="index?page=inscription">Je n'ai pas de compte je m'inscris</a></p>
+            </fieldset>
+        </form>
+    </main>
+
+<?php include "footer.phtml"?>

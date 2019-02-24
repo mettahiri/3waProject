@@ -1,0 +1,57 @@
+<?php include "header.phtml"?>
+   <main id="produit">
+        <article>
+            <section>
+                <img id="imgProduit" src="assets/img/<?=$produit['img'] ?>"
+                     data-img1 = "<?=$produit['img'] ?>"
+                     data-img2 = "<?=$produit['imgBack'] ?>" alt="<?=$produit["titre"]?>" />
+            </section>
+            <section>
+                <h3><?=$produit["titre"]?> </h3>
+                <p><?=$produit["description"] ?></p>
+                <form action="index?page=panier" method="post">
+                    <input type="hidden" name="id" value="<?=$produit['id']?> ">
+                    <?php if($produit['id_categorie'] == 1 || $produit['id_categorie'] == 2): ?>
+                    <label for="taille">Taille :</label>
+                    <select name="taille" id="taille">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                    <?php elseif ($produit['id_categorie'] == 3):?>
+                    <select name="taille" id="taille">
+                        <option value="2 ans">2 ans</option>
+                        <option value="4 ans">4 ans</option>
+                        <option value="6 ans">6 ans</option>
+                        <option value="8 ans">8 ans</option>
+                        <option value="10 ans">10 ans</option>
+                    </select>
+                    <?php else:?>
+                    <input type="hidden" name="taille" value="Standard">
+                    <?php endif;?>
+                    <label for="quantity">Quantité :</label>
+                    <select name="quantity" id="quantity">
+                        <?php for($i=1;$i<=$produit['enstock'];$i++): ?>
+                        <option value="<?=$i?>"><?=$i?></option>
+                        <?php endfor; ?>
+                    </select>
+                
+                    <p>
+                        Livraison Estimé entre le
+                        <strong><?= date("d-m-Y",strtotime('+6 day'))?></strong>
+                        et le
+                        <strong><?= date("d-m-Y",strtotime('+10 day'))?></strong>
+                    </p>
+
+                    <span  class="btn center " >prix : <?=$produit["prix"]?> €</span><!--
+                    --><button type="submit" name="submit_panier" class="btn" >
+                        <i class="fas fa-cart-plus "></i>
+                    </button>
+                </form>
+            </section>
+        </article>
+    </main>
+    <script src="assets/js/imageChange.js" ></script>
+<?php include "footer.phtml"?>

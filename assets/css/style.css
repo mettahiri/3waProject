@@ -1,0 +1,354 @@
+* {
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    background: #fff;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 1.2em;
+}
+header .fa-bars{
+    display: none;
+}
+header nav:first-child a {
+    padding :0 10px;
+    color: white;
+    font-size: 1.2em;
+}
+header nav:first-child {
+    padding :5px;
+    background: rgb(14, 56, 46);
+    color: white;
+}
+header nav:first-child {
+    display: flex;
+    justify-content: space-between
+}
+header nav:first-child ul {
+    display: flex;
+}
+header nav:last-child {
+    text-align: center;
+}
+header nav:last-child ul {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+header nav:last-child ul li a {
+    display: inline-block;
+    border : 1px solid lightgray;
+    border-top:none;
+    padding : 20px 30px;
+    color : #000;
+}
+header nav:last-child ul li a:hover{
+    background: rgb(14, 56, 46);
+    color:white;
+}
+.shop-mobile {
+    display: none;
+}
+
+.text {
+    background: rgb(175, 80, 80);
+    padding : 50px 0;
+}
+.text h1, .text h2, .search  {
+    width: 80%;
+    margin:50px auto;
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    color:white;
+}
+.search {
+    transition: all .5s ease;
+}
+.search button {
+    border : 1px solid rgba(14, 56, 46, 0.727); 
+    color  : white ; 
+    background:  rgba(14, 56, 46, 0.727);
+    cursor: pointer;
+}
+.search input, .search button {
+    padding : 15px;
+    border : 1px solid rgba(14, 56, 46, 0.727); 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.481);
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+
+}
+.searchBlock {
+    background: #fff;
+    width :"80%";
+    margin: 10px auto;
+    display:none;
+}
+.searchBlock figure {
+    width : 29%;
+    display: inline-block;
+    margin :10px 0;
+}
+.searchBlock figure img{
+    width : 100%;
+}
+.searchBlock figure figcaption{
+    color : black;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+.section-container {
+    position: relative;
+    width: 80%;
+    margin : 30px auto;
+    display : flex;
+    justify-content: center;
+    background: #fff;
+    border-top : 6px solid rgba(14, 56, 46, 0.727);
+    border-bottom : 6px solid rgba(14, 56, 46, 0.727);
+
+    /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.515); */
+}
+.section-container article {
+    text-align: center;
+    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.666); */
+    margin : 10px 20px;
+    overflow: hidden;
+    color : #333;
+}
+.section-container article a {
+    
+    color : #333;
+}
+
+.section-container article img {
+    width : 70%;
+    margin :5px 20px;
+    transition:all .1s ease
+}
+.a_la_une article:hover img  {
+   transform: scale(1.1) translateY(-10px)
+}
+.section-container .Container   p {
+    text-align: left;
+}
+.section-container .btn{
+    transform: translateY(150%);
+}
+ .btn1{
+    transform: translateY(150%);
+    display: inline-block;
+    width: 100%;
+    transition:all .3s ease;
+    padding : 15px;
+    border:none;
+    background: rgb(15, 80, 63);
+    color : white;
+    font-size: 22px;
+}
+.section-container .btn ,#produit .btn {
+    display: inline-block;
+    width: 70%;
+    transition:all .3s ease;
+    padding : 15px;
+    border:none;
+    background: rgb(15, 80, 63);
+    color : white;
+    font-size: 22px;
+}
+.section-container article .btn:last-child  ,#produit .btn:last-child {
+    background: rgba(148, 17, 17, 0.741);
+    width: 30%;
+    cursor: pointer;
+
+}
+.section-container article:hover .btn  {
+   transform: translateY(0%);
+}
+.section-container article:hover .btn1  {
+   transform: translateY(0%);
+}
+.titre_prix {
+    display: flex;
+    justify-content: space-between;
+}
+.titre_prix h3,
+.Container h4 {
+    margin :0;
+    margin-top :10px;
+
+}
+.titre_prix h3:last-child {
+    color :  rgb(19, 121, 97);
+
+}
+.Container {
+    padding : 20px;
+}
+.title {
+    position: absolute;
+    top:-50px;
+    left:5px;
+    transform: rotate(-5deg);
+    display: inline-block;
+    background: #fff;
+    border:2px solid #000;
+    padding: 10px;
+    z-index: 10;
+}
+.categorie {
+    text-align: center;
+
+}
+.categorie img {
+     transform: scale(3) translateY(15%);
+}
+.categorie h4 {
+    background: #fff;
+    color: black
+}
+#login {
+    padding: 5vh 0;
+    width : 40%;
+    margin: 0 auto;
+}
+#login form  fieldset {
+    padding:50px;
+}
+#login form input,select {
+    width : 100%;
+    margin :10px 0;
+    padding : 10px;
+}
+#login form input[type="submit"] {
+ background: rgb(15, 80, 63);
+ border :none;
+ color:white;
+}
+#produit {
+    padding: 40px 0;
+}
+#produit article {
+    display: flex;
+    justify-content:center
+}
+#produit article section{
+   margin : 20px;
+}
+#produit article section:last-child{
+   margin-top : 20px;
+}
+
+
+.error {
+    text-align: center;
+    color : tomato;
+}
+#categorie .section-container {
+    position: relative;
+    margin : 50px auto;
+    display: block;
+    text-align: center;
+    background: #fff;
+    border-top : 6px solid rgba(14, 56, 46, 0.727);
+    border-bottom : 6px solid rgba(14, 56, 46, 0.727);
+}
+#categorie .section-container article{
+    display: inline-block;
+    width: 29%;
+    margin:0;
+}
+
+
+#panier  {
+    width : 60%;
+    margin:15vh auto;
+}
+#panier table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#panier table caption{
+    padding :10px;
+    background: #333;
+    color :white;
+    font-size: 1.5em;
+}
+.center {
+    text-align: center;
+}
+.btn2 {
+    display: block;
+    width: 100%;
+    padding : 15px;
+    border:none;
+    background: rgb(15, 80, 63);
+    color : white;
+    font-size: 22px;
+}
+#panier table td,
+#panier table td a {
+    padding :10px;
+    font-size: 1.3em;
+    text-align: center;
+}
+#panier table td{
+    border : 1px solid #999;
+}
+
+#confirmation{
+    width: 40%;
+    margin:15vh auto;
+    text-align: center;
+}
+#confirmation p {
+    font-size: 1.3em;
+}
+#confirmation input {
+    width:100%;
+    margin: 20px 0;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+#confirmation label {
+    float: left;
+}
+
+.userAdmin {
+    text-align: center;
+}
+
+.userAdmin div {
+    background: #fff;
+    position: absolute;
+    right : 2px;
+    width : auto;
+    display: none;
+
+}
+.userAdmin:hover div {
+    display: block;
+}
+.userAdmin div li{
+color : #000 ;
+padding: 10px 5px;
+}
+.userAdmin div li a{
+color : #000 ;
+}
+.mesCommandes{
+    padding : 60px 0;
+}
+footer {
+    margin-top: 50px;
+    padding-top : 30px;
+    height: 30vh;
+    background: #333;
+    display: flex;
+    justify-content: center;
+}
+
+footer table td {
+    color : white;
+
+}

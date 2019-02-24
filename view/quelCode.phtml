@@ -1,0 +1,25 @@
+   <?php include "header.phtml"?>
+    <main id="categorie">
+   <section class="section-container" >
+            <h2 class="title"><?=$s ?></h2>
+            <?php foreach($produit as $product):?>
+                 <article>
+                    <a href="index?page=produit&id=<?=$product["id"]?> ">
+                        <div class="Container" >
+                                <img src="assets/img/<?=$product['img']?>" alt="">
+                                <div class="titre_prix">
+                                    <h3><?=$product["titre"]?> </h3>
+                                    <h3><?=$product["prix"]?> €</h3>
+                                </div>
+                                <p><?=$product["description"]?></p>
+                            
+                        </div>
+                        <div>
+                            <span class="btn1" >Voir</span>
+                        </div>
+                    </a>
+                </article>
+            <?php endforeach;?>
+        </section>
+    </main>
+    <?php include "footer.phtml"?>

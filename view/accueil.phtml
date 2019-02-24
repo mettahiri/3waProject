@@ -1,0 +1,69 @@
+<?php include "header.phtml"?>
+   <main id="accueil">
+        <section class="text">
+                <h1>{ La vie en code }</h1>
+               <div class="search" >
+                    <input type="text" placeholder="html,react,python..." autofocus= true><!--
+                 --><button><i class="fas fa-search"></i></button>
+                 <section class="searchBlock">
+                
+                 </section>
+               </div>
+        </section>
+        <section class="section-container a_la_une" >
+            <h2 class="title">A la une</h2>
+            <?php foreach($frontPage as $product):?>
+                <article>
+                    <a href="index?page=produit&id=<?=$product[0]["id"]?> ">
+                        <div class="Container" >
+                            <img src="assets/img/<?=$product[0]['img']?>" alt="">
+                            <div class="titre_prix">
+                                <h3><?=$product[0]["titre"]?> €</h3>
+                                <h3><?=$product[0]["prix"]?> €</h3>
+                            </div>
+                            <p><?=$product[0]["description"]?></p>
+                            
+                        </div>
+                        <div>
+                            <span class="btn1" >Voir</span>
+                        </div>
+                    </a>
+                </article>
+            <?php endforeach;?>
+        </section>
+
+        <section class="text">
+            <h2>< Je code donc je m'habille en code /> </h2>
+        </section>
+       
+        <section class="section-container categorie" >
+            <h2 class="title">Quel type de code?</h2>
+                <article>
+                    <a href="index?page=quelCode&searching=html">
+                        <img src="assets/img/html.jpg" width="100%;" alt="html">
+                    </a>
+                </article>
+                <article>
+                    <a href="index?page=quelCode&searching=css">
+                       <img src="assets/img/css.jpg" width="100%;" alt="css">
+                    </a>
+                </article>
+                <article>
+                    <a href="index?page=quelCode&searching=javascript">
+                        <img src="assets/img/js.jpg" width="100%;" alt="javascript">
+                    </a>
+                </article>
+                <article>
+                    <a href="index?page=quelCode&searching=php">
+                        <img src="assets/img/php.jpg" width="100%;" alt="php">
+                    </a>
+                </article>
+              <article>
+                  <a href="index?page=quelCode&searching=mysql">
+                    <img src="assets/img/mysql.jpg" width="100%;" alt="mysql">
+                  </a>
+              </article>
+        </section>
+
+    </main>
+<?php include "footer.phtml"?>

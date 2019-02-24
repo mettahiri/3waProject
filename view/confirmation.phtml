@@ -1,0 +1,47 @@
+<?php include "header.phtml"?>
+    <main id="confirmation">
+        <?php if(isset($_SESSION["user"]["email"])): ?>
+        <p>Vous avez commandé : </p>
+        <?php $commande = "" ?>
+        <?php for($i=0;$i < count($_SESSION["panier"]["libelleProduit"]);$i++): ?>
+            <p>
+                <strong><?=$_SESSION["panier"]["qteProduit"][$i] ?></strong> 
+                <strong><?=$_SESSION["panier"]["libelleProduit"][$i] ?></strong>    
+                de taille : <strong><?=$_SESSION["panier"]["taille"][$i] ?> </strong> 
+                a <strong><?=$_SESSION["panier"]["prixProduit"][$i] ?></strong>  € l'unité
+            </p>
+            <?php $commande = $_SESSION["panier"]["qteProduit"][$i] . " " . 
+                                $_SESSION["panier"]["libelleProduit"][$i] . ", Taille : " .
+                                $_SESSION["panier"]["taille"][$i] . ", prix : " . 
+                                $_SESSION["panier"]["prixProduit"][$i] . " ( l'unité ) ";
+                                ?>
+        <?php endfor ?>
+        <p>
+            Le total de vote Commande de  
+            <strong><?=$_SESSION['panier']["quantiteGlobal"]?> </strong>
+            produits est de : 
+            <strong><?=$_SESSION["panier"]["prixGlobal"]?> €</strong>  
+        </p>
+        <form action="index?page=success" method="post">
+            <input type="hidden" name="id_user" value=<?= $_SESSION['user']['id'] ?>>
+            <input type="hidden" name="commande" value="<?= $commande ?>">
+            <input type="hidden" name="prixGlobal" value="<?=$_SESSION['panier']['prixGlobal']?>">
+            <input type="hidden" name="etat" value="En préparation ...">
+             <label for="adresse">A l'adresse suivante :</label>
+            <input id="adresse" type="text" name="adresse" placeholder="Adresse complete" value="<?=$_SESSION['user']['adresse']?>">
+           
+            <p class="error">
+                <?php if(isset($_SESSION["adresseError"]) ) echo $_SESSION["adresseError"] ; 
+                unset($_SESSION["adresseError"]);?>
+            </p>
+
+            <input type="submit" class="center btn2" value="Confirmer la commande">
+
+        </form>
+    <?php else : ?>
+        <h1>Vous devez vous <a href="index?page=login">connecter</a> 
+         ou vous <a href="index?page=inscription">inscrire</a> puis retournez au panier pour pouvoir
+         continuer la transaction </h1>
+    <?php endif; ?>
+    </main>
+<?php include "footer.phtml"?>

@@ -1,0 +1,51 @@
+<?php include "header.phtml"?>
+<main id="panier">
+    <?php if(isset($_SESSION["panier"]["libelleProduit"]) && !empty($_SESSION["panier"]["libelleProduit"])):?>
+    <table>
+        <tbody>
+            <caption>Panier</caption>
+            <tr>
+                <td>Image</td>
+                <td>Titre</td>
+                <td>Taille</td>
+                <td>Prix</td>
+                <td>Quantité</td>
+            </tr>
+            <?php for($i=0;$i < count($_SESSION["panier"]["libelleProduit"]);$i++): ?>
+            <tr>
+                <td><img src="assets/img/<?=$_SESSION['panier']['img'][$i] ?>" 
+                    alt="<?=$_SESSION['panier']['libelleProduit'][$i] ?>" width="50px"></td>
+
+                <td><?=$_SESSION["panier"]["libelleProduit"][$i] ?></td>
+                <td><?=$_SESSION["panier"]["taille"][$i] ?></td>
+                <td><?=$_SESSION["panier"]["prixProduit"][$i] ?> €</td>
+                <td>
+                    <a href="index?page=panier&s=<?=$i?>">-</a>
+                        <?=$_SESSION["panier"]["qteProduit"][$i] ?>
+                    <a href="index?page=panier&a=<?=$i?>">+</a>
+                </td>
+            </tr>
+            <?php endfor ?>
+    </tbody>
+    </table>
+
+    <h2 class="center" >Total : <?=$_SESSION["panier"]["prixGlobal"]?> €</h2>
+    <?php if($_SESSION["panier"]["prixGlobal"]): ?>
+        <a class="center btn2" href="index?page=confirmation">Commander</a>
+    <?php endif; ?>
+    <a  href="index?page=panier&v=true">
+        <h2 class="error ">vider le panier</h2>
+    </a>
+</main>
+<?php include "footer.phtml"?>  
+
+
+<?php else: ?>
+<div class="error">
+    <h3>Votre panier est vide</h3>
+        <p>Vous allez etre rediriger vers la page précedente...</p>
+</div>
+</main>
+<script src="assets/js/previousPage.js"></script>
+<?php endif; ?>
+

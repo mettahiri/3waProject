@@ -1,0 +1,66 @@
+@media (max-width: 600px) { 
+    header nav:first-child a {
+        font-size: 1.5em;
+    }
+
+    header nav:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav:first-child ul {
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        transition: all .5s ease;
+    }
+    
+     header nav:first-child ul li{
+        margin:10px 0;
+    }
+
+    header nav:first-child .shop{
+        display:none;
+    }
+
+    .search-icon-mobile{
+        position: absolute;
+        top:15px;
+        right : 70px;
+        display: inline-block;
+    }
+     .shop-mobile {
+         display: inline-block;
+          position: absolute;
+        top:15px ;
+        right : 10px;
+        display: inline-block;
+     }
+    header nav:first-child .search-icon{
+    }
+
+    header nav:first-child .fa-bars{
+        display: inline-block;
+        align-self: start;
+        font-size: 2.5em;
+        margin-left : 5px;
+    }
+    
+     header nav:last-child ul li a {
+        padding : 10px 5px;
+        text-align: left;
+    }
+
+    .search input, .search button {
+        padding : 10px;
+
+    }
+
+    .mobile-show {
+        display: flex !important;
+        padding: 0;
+    }
+  
+ }

@@ -1,0 +1,16 @@
+<?php include "header.phtml"?>
+   <main id="categorie">
+        <section class="section-container mesCommandes " >
+            <h2 class="title">Mes Commandes</h2>
+            <?php if(!empty($commandes)): ?>
+                <?php foreach($commandes as $cmd):?>
+                
+                    <h2><?= $cmd["commande"]. " - Prix total : " . $cmd["prix_total"] . " - Etat : <span class='error'>" .$cmd["etat"]. "</span>"  ?></h2>
+                    
+                <?php endforeach;?>
+            <?php else: ?>
+                    <h2>Vous n'avez aucune commande enregistré</h2>
+            <?php endif ?>
+        </section>
+    </main>
+<?php include "footer.phtml"?>
